@@ -3,11 +3,12 @@ const div = document.createElement("div");
 const h1 = document.createElement("h1");
 
     h1.innerHTML = "Bienvenido al formulario CODERHOUSE"
-    h1.classList.add("titulo");
+    h1.className = "titulo";
 
 const form = document.createElement("form");
 
     form.innerHTML = ""
+    form.className = "formulario";
 
 const label1 = document.createElement("label");
 
@@ -28,6 +29,7 @@ const input2 = document.createElement("input");
 
     input2.setAttribute("type", "email");
     input2.setAttribute("placeholder", "mail@gmail.com");
+    input2.setAttribute("name","mail");
     input2.setAttribute("required","");
 
 const label3 = document.createElement("label");
@@ -87,3 +89,27 @@ label5.appendChild(input4);
 label6.appendChild(input5);
 form.appendChild(espacio);
 form.appendChild(button);
+
+label1.addEventListener("mouseover", () => {
+    label1.className = "hover"
+})
+
+label1.addEventListener("mouseout", () => {
+    label1.className = ""
+})
+
+label2.addEventListener("mouseover", () => {
+    label2.className = "hover"
+})
+
+label2.addEventListener("mouseout", () => {
+    label2.className = ""
+})
+
+label3.addEventListener("mouseover", () => {
+    label3.className = "hover"
+})
+
+label3.addEventListener("mouseout", () => {
+    label3.className = ""
+})
