@@ -38,17 +38,36 @@ const input3 = document.createElement("input");
 
     input3.setAttribute("type", "radio");
 
+const input4 = document.createElement("input");
+
+    input4.setAttribute("type", "radio");
+
+const input5 = document.createElement("input");
+
+    input5.setAttribute("type", "radio");
+    input5.innerHTML = ("<br><br>");
+
 const label4 = document.createElement("label");
 
-    label4.innerHTML = "facil";
+    label4.innerHTML = "<b> Facil </b> ";
 
 const label5 = document.createElement("label");
 
-    label5.innerHTML = "medio";
+    label5.innerHTML = "<br><br> <b> Medio </b> ";
 
 const label6 = document.createElement("label");
 
-    label6.innerHTML = "dificil";
+    label6.innerHTML = "<br><br> <b> Dificil </b> ";
+
+const espacio = document.createElement("p");
+
+    // espacio.innerHTML = ("<br>")
+
+const button = document.createElement("button");
+
+    button.innerHTML = ("ENVIAR")
+    button.setAttribute("type", "submit");
+    // button.setAttribute ("value", "Enviar");
 
 
 
@@ -60,9 +79,11 @@ form.appendChild(input1);
 form.appendChild(label2);
 form.appendChild(input2);
 form.appendChild(label3);
-
-
-// form.appendChild(input3);
+form.appendChild(label4);
+form.appendChild(label5);
+form.appendChild(label6);
 label4.appendChild(input3);
-label5.appendChild(input3);
-label6.appendChild(input3);
+label5.appendChild(input4);
+label6.appendChild(input5);
+form.appendChild(espacio);
+form.appendChild(button);
