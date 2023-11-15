@@ -42,6 +42,6 @@ button{
 .hover{
     color: rgb(229, 245, 13);
     /* text-decoration: underline; */
-    transition: all 0.5s linear ;
+    transition: all 0.3s linear ;
 }
 

@@ -10,65 +10,73 @@ const form = document.createElement("form");
     form.innerHTML = ""
     form.className = "formulario";
 
-const label1 = document.createElement("label");
+const labelNombre = document.createElement("label");
 
-    label1.innerHTML = "<b>Nombre del alumno</b> <br><br>";
+    labelNombre.setAttribute("for", "Nombre");
+    labelNombre.innerHTML = "<b>Nombre del alumno</b> <br><br>";
 
-const input1 = document.createElement("input");
+const inputNombre = document.createElement("input");
 
-    input1.setAttribute("type", "text");
-    input1.setAttribute("placeholder", "Nombre Completo");
-    input1.setAttribute("name","Nombre Completo");
-    input1.setAttribute("required","");
+    inputNombre.setAttribute("id", "Nombre");
+    inputNombre.setAttribute("type", "text");
+    inputNombre.setAttribute("placeholder", "Nombre Completo");
+    inputNombre.setAttribute("name","Nombre Completo");
+    inputNombre.setAttribute("required","");
 
-const label2 = document.createElement("label");
+const labelMail = document.createElement("label");
 
-    label2.innerHTML = "<br><br> <b>Mail</b> <br><br>";
+    labelMail.setAttribute("for", "Mail");
+    labelMail.innerHTML = "<br><br> <b>Mail</b> <br><br>";
 
-const input2 = document.createElement("input");
+const inputMail = document.createElement("input");
 
-    input2.setAttribute("type", "email");
-    input2.setAttribute("placeholder", "mail@gmail.com");
-    input2.setAttribute("name","mail");
-    input2.setAttribute("required","");
+    inputMail.setAttribute("id", "Mail");
+    inputMail.setAttribute("type", "email");
+    inputMail.setAttribute("placeholder", "mail@gmail.com");
+    inputMail.setAttribute("name","mail");
+    inputMail.setAttribute("required","");
 
-const label3 = document.createElement("label");
+const labelDificultad = document.createElement("label");
 
-    label3.innerHTML = "<br><br> <b>¿Que tan complicada te parecio la pre-entrega3?</b> <br><br>";
+    labelDificultad.innerHTML = "<br><br> <b>¿Que tan complicada te parecio la pre-entrega3?</b> <br><br>";
 
-const input3 = document.createElement("input");
+const inputFacil = document.createElement("input");
 
-    input3.setAttribute("type", "radio");
+    inputFacil.setAttribute("id", "Facil");
+    inputFacil.setAttribute("type", "radio");
 
-const input4 = document.createElement("input");
+const inputMedio = document.createElement("input");
 
-    input4.setAttribute("type", "radio");
+    inputMedio.setAttribute("id", "Medio");
+    inputMedio.setAttribute("type", "radio");
 
-const input5 = document.createElement("input");
+const inputDificil = document.createElement("input");
 
-    input5.setAttribute("type", "radio");
-    input5.innerHTML = ("<br><br>");
+    inputDificil.setAttribute("id", "Dificil");
+    inputDificil.setAttribute("type", "radio");
+    inputDificil.innerHTML = ("<br><br>");
 
-const label4 = document.createElement("label");
+const labelFacil = document.createElement("label");
 
-    label4.innerHTML = "<b> Facil </b> ";
+    labelFacil.innerHTML = "<b> Facil </b> ";
 
-const label5 = document.createElement("label");
+const labelMedio = document.createElement("label");
 
-    label5.innerHTML = "<br><br> <b> Medio </b> ";
+    labelMedio.innerHTML = "<br><br> <b> Medio </b> ";
 
-const label6 = document.createElement("label");
+const labelDificil = document.createElement("label");
 
-    label6.innerHTML = "<br><br> <b> Dificil </b> ";
+    labelDificil.innerHTML = "<br><br> <b> Dificil </b> ";
 
 const espacio = document.createElement("p");
 
     // espacio.innerHTML = ("<br>")
 
-const button = document.createElement("button");
+const botonSubmit = document.createElement("button");
 
-    button.innerHTML = ("ENVIAR")
-    button.setAttribute("type", "submit");
+    botonSubmit.setAttribute("id", "boton");
+    botonSubmit.innerHTML = ("ENVIAR")
+    botonSubmit.setAttribute("type", "submit");
     // button.setAttribute ("value", "Enviar");
 
 
@@ -76,40 +84,68 @@ const button = document.createElement("button");
 document.body.append(div);
 div.appendChild(h1);
 div.appendChild(form);
-form.appendChild(label1);
-form.appendChild(input1);
-form.appendChild(label2);
-form.appendChild(input2);
-form.appendChild(label3);
-form.appendChild(label4);
-form.appendChild(label5);
-form.appendChild(label6);
-label4.appendChild(input3);
-label5.appendChild(input4);
-label6.appendChild(input5);
+form.appendChild(labelNombre);
+form.appendChild(inputNombre);
+form.appendChild(labelMail);
+form.appendChild(inputMail);
+form.appendChild(labelDificultad);
+form.appendChild(labelFacil);
+form.appendChild(labelMedio);
+form.appendChild(labelDificil);
+labelFacil.appendChild(inputFacil);
+labelMedio.appendChild(inputMedio);
+labelDificil.appendChild(inputDificil);
 form.appendChild(espacio);
-form.appendChild(button);
+form.appendChild(botonSubmit);
 
-label1.addEventListener("mouseover", () => {
-    label1.className = "hover"
+labelNombre.addEventListener("mouseover", () => {
+    labelNombre.classList.add("hover")
 })
 
-label1.addEventListener("mouseout", () => {
-    label1.className = ""
+labelNombre.addEventListener("mouseout", () => {
+    labelNombre.classList.remove("hover")
 })
 
-label2.addEventListener("mouseover", () => {
-    label2.className = "hover"
+labelMail.addEventListener("mouseover", () => {
+    labelMail.classList.add("hover")
 })
 
-label2.addEventListener("mouseout", () => {
-    label2.className = ""
+labelMail.addEventListener("mouseout", () => {
+    labelMail.classList.remove("hover")
 })
 
-label3.addEventListener("mouseover", () => {
-    label3.className = "hover"
+labelDificultad.addEventListener("mouseover", () => {
+    labelDificultad.classList.add("hover")
 })
 
-label3.addEventListener("mouseout", () => {
-    label3.className = ""
+labelDificultad.addEventListener("mouseout", () => {
+    labelDificultad.classList.remove("hover")
 })
+
+const arrayNombre = [];
+const arrayMail = [];
+const arrayDificultad = [];
+const registrarDatosBoton = document.getElementById("boton");
+
+registrarDatosBoton.addEventListener("click", registrarDatos);
+
+function registrarDatos (){
+    const datoNombre = document.getElementById("Nombre").value
+    const datoMail = document.getElementById("Mail").value;
+    const datoFacil = document.getElementById("Facil").value;
+    const datoMedio = document.getElementById("Medio").value;
+    const datoDificil = document.getElementById("Dificil").value;
+}
+
+arrayNombre.push(datoNombre);
+arrayMail.push(datoMail);
+arrayDificultad.push(datoFacil);
+arrayDificultad.push(datoMedio);
+arrayDificultad.push(datoDificil);
+
+localStorage.setItem("Nombre_Alumno", JSON.stringify(arrayNombre));
+localStorage.setItem("Mail_Alumno", JSON.stringify(arrayMail));
+localStorage.setItem("Dificultad_1", JSON.stringify(arrayDificultad));
+localStorage.setItem("Dificultad_2", JSON.stringify(arrayDificultad));
+localStorage.setItem("Dificultad_3", JSON.stringify(arrayDificultad));
+
