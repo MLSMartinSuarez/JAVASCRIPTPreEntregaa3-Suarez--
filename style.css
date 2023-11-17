@@ -27,8 +27,6 @@ button{
     align-items: center;
     color: white;
     font-size: large;
-    /* -webkit-text-stroke-width: 0.2px;
-    -webkit-text-stroke-color: rgb(255, 255, 255); */
 }
 
 .titulo{
@@ -41,7 +39,6 @@ button{
 
 .hover{
     color: rgb(229, 245, 13);
-    /* text-decoration: underline; */
     transition: all 0.3s linear ;
 }
 
